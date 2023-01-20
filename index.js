@@ -136,30 +136,30 @@ app.post("/start-upload", async (req, res) => {
 //     return err;
 //   }
 // });
-app.post("/save", async (req, res) => {
-  try {
-    console.log(req.files, req.file);
-    var urls = [];
-    const data =
-      "https://meta-unite-server.s3.ap-south-1.amazonaws.com/news/881D5CE2-1486-4F22-AB45-EA54EBE5DFFD.jpg";
+// app.post("/save", async (req, res) => {
+//   try {
+//     console.log(req.files, req.file);
+//     var urls = [];
+//     const data =
+//       "https://meta-unite-server.s3.ap-south-1.amazonaws.com/news/881D5CE2-1486-4F22-AB45-EA54EBE5DFFD.jpg";
 
-    // get extension of file
-    const extension = data.split(".")[data.split(".").length - 1];
-    console.log(extension);
-    // if (req.files) {
-    //   const files = req.files;
-    //   for (let i = 0; i < files.length; i++) {
-    //     const file = files[i];
-    //     const result = await upload.uploadFile(file, req.url.split("/")[1]);
-    //     urls.push(result);
-    //   }
-    // }
-    return res.status(200).send(urls);
-  } catch (error) {
-    console.log(error.message);
-    res.status(500).send("Error saving file.");
-  }
-});
+//     // get extension of file
+//     const extension = data.split(".")[data.split(".").length - 1];
+//     console.log(extension);
+//     // if (req.files) {
+//     //   const files = req.files;
+//     //   for (let i = 0; i < files.length; i++) {
+//     //     const file = files[i];
+//     //     const result = await upload.uploadFile(file, req.url.split("/")[1]);
+//     //     urls.push(result);
+//     //   }
+//     // }
+//     return res.status(200).send(urls);
+//   } catch (error) {
+//     console.log(error.message);
+//     res.status(500).send("Error saving file.");
+//   }
+// });
 
 app.listen(3000, () => {
   console.log("Server running on port 3000");
